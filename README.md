@@ -1,7 +1,7 @@
-# Creative "Hello World" Generator
+# "Hello World" Generator
 
 ## Overview
-This project demonstrates a web application using a **Streamlit frontend** and a **Flask backend** to generate a creative "Hello World" message through a Groq generative AI API. A unique greeting message is displayed on the UI when a user clicks a button on the frontend.
+This project demonstrates a web application using a **Streamlit frontend** and a **Flask backend** to generate a creative "Hello World" message through a Groq generative AI API. A unique greeting message is displayed on the UI when a user clicks a button on the front end.
 
 ## Project Structure
 - `frontend.py` - Contains the Streamlit frontend code that displays the button and calls the backend.
@@ -48,19 +48,19 @@ GROQ_API_KEY=your_groq_api_key_here
 ```bash
 python backend.py
 ```
-The Flask server will run on http://localhost:8501
+The Flask server will run on http://localhost:5000
 
 ### Start the Frontend
 In a new terminal:
 ```bash
 streamlit run frontend.py
 ```
-The Streamlit interface will be available at http://localhost:5000
+The Streamlit interface will be available at http://localhost:8501
 
 ## Usage
 
 1. Open the Streamlit app in your browser at http://localhost:8501
-2. Click the "Click here to greet 'Hello World' creatively" button
+2. Click the "Click here to for 'Hello World' greetings" button
 3. View the generated creative greeting from the Groq API in the UI
 
 ## Code Documentation
@@ -77,14 +77,8 @@ The Streamlit interface will be available at http://localhost:5000
 - Shows generated greetings or error messages
 
 ## Project Reflection
-
-### Learnings
-- Integration of external APIs with Flask
-- Connecting Flask backend with Streamlit frontend
-- Secure key storage using .env files
-
-### Challenges
-- Ensuring reliable frontend-backend communication because the backend and frontend were running on different ports.
-- Handling cases when API calls fail to fetch from the backend
-
-### Future Applications
+- I learned how to design frontends easily using Streamlit with Python and about using a Flask backend for calling a language model API.
+- I explored different paid and free language model API providers and chose Groq for this project because it is fast and free.
+- I gained experience in integrating backend and frontend parts of an application and securely storing API variables.
+- One challenge I faced was accessing environment variables in Flask. I initially had errors when using environment variables directly but learned to access them correctly with python-dotenv and os libraries.
+With these skills, I can now create more complex web applications that take user input through chat and provide responses from the backend using a language model API. I can apply my Streamlit skills to build frontends with multiple elements for interactive UI. Using the language model API, I can perform tasks like summarizing, translating, or answering user input from the front end. However, I’ll need to work on effective prompt engineering for the best results.
