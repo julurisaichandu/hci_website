@@ -29,11 +29,16 @@ This project demonstrates a web application using a **Streamlit frontend** and a
   - `python-dotenv` (for loading environment variables)
   - `groq` (Groq API client, if available; replace with `requests` if custom API client is unavailable)
 
-## Installation
+## Setup and Installation
+
+## clone the repository
+```bash
+git clone <repository-url>
+```
 
 ### Step 1: Install Required Packages
 ```bash
-pip install streamlit flask requests python-dotenv
+pip install streamlit flask requests python-dotenv groq
 ```
 
 ### Step 2: Set Up .env File
@@ -41,6 +46,7 @@ In the project root, create a `.env` file:
 ```plaintext
 GROQ_API_KEY = "your_groq_api_key_here"
 ```
+You can get your groq api key by following the quick start guide from the groq website - https://console.groq.com/docs/quickstart 
 
 ## Running the Application
 
