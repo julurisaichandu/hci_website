@@ -39,7 +39,7 @@ pip install streamlit flask requests python-dotenv
 ### Step 2: Set Up .env File
 In the project root, create a `.env` file:
 ```plaintext
-GROQ_API_KEY=your_groq_api_key_here
+GROQ_API_KEY = "your_groq_api_key_here"
 ```
 
 ## Running the Application
