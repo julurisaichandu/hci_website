@@ -1,22 +1,20 @@
-# Project: Creative "Hello World" Generator
+# Creative "Hello World" Generator
 
 ## Overview
-This project demonstrates a simple application using a **Streamlit frontend** and a **Flask backend** to generate a creative "Hello World" message through a Groq generative AI API. When a user clicks a button on the frontend, it triggers the backend to request a unique greeting message from the API and displays it on the frontend.
+This project demonstrates a web application using a **Streamlit frontend** and a **Flask backend** to generate a creative "Hello World" message through a Groq generative AI API. A unique greeting message is displayed on the UI when a user clicks a button on the frontend.
 
 ## Project Structure
 - `frontend.py` - Contains the Streamlit frontend code that displays the button and calls the backend.
 - `backend.py` - Contains the Flask backend code that handles API calls to Groq and returns the generated message.
-- `.env` - Stores sensitive environment variables, such as the Groq API key.
-
-## API Integration Steps
+## Implementation
 1. **Environment Setup**: 
    - Used `.env` to securely store and retrieve the Groq API key. 
-   - Loaded this key in `backend.py` using `dotenv` for secure access during API calls.
+   - Loaded this key in `backend.py` using `dotenv` package.
 
 2. **Backend Implementation**:
-   - Implemented a Flask application with an endpoint `/generate_greeting` that makes a POST request to the Groq API.
+   - Implemented a Flask application with an endpoint `/generate_hello_world` that makes a POST request to the Groq API.
    - The API request uses a specific model and a custom prompt to generate a creative "Hello World" message.
-   - Response from the API is formatted and sent back to the frontend.
+   - Response from the API is formatted and sent back to the front end.
 
 3. **Frontend Implementation**:
    - Created a Streamlit interface with a button. When clicked, it sends a POST request to the Flask backend.
@@ -50,26 +48,26 @@ GROQ_API_KEY=your_groq_api_key_here
 ```bash
 python backend.py
 ```
-The Flask server will run on http://localhost:5000
+The Flask server will run on http://localhost:8501
 
 ### Start the Frontend
 In a new terminal:
 ```bash
 streamlit run frontend.py
 ```
-The Streamlit interface will be available at http://localhost:8501
+The Streamlit interface will be available at http://localhost:5000
 
 ## Usage
 
 1. Open the Streamlit app in your browser at http://localhost:8501
 2. Click the "Click here to greet 'Hello World' creatively" button
-3. View the generated creative greeting from the Groq API
+3. View the generated creative greeting from the Groq API in the UI
 
 ## Code Documentation
 
 ### Backend (Flask)
 - Loads environment variables from .env
-- Creates a Flask app with /generate_greeting endpoint
+- Creates a Flask app with /generate_hello_world endpoint
 - Makes requests to the Groq API
 - Returns generated messages as JSON
 
@@ -86,7 +84,7 @@ The Streamlit interface will be available at http://localhost:8501
 - Secure key storage using .env files
 
 ### Challenges
-- Ensuring reliable frontend-backend communication
-- Handling API failure error messages
+- Ensuring reliable frontend-backend communication because the backend and frontend were running on different ports.
+- Handling cases when API calls fail to fetch from the backend
 
 ### Future Applications
