@@ -83,3 +83,7 @@ The Streamlit interface will be available at http://localhost:8501
 - I gained experience in integrating backend and frontend parts of an application and securely storing API variables.
 - One challenge I faced was accessing environment variables in Flask. I initially had errors when using environment variables directly but learned to access them correctly with python-dotenv and os libraries.
 With these skills, I can now create more complex web applications that take user input through chat and provide responses from the backend using a language model API. I can apply my Streamlit skills to build frontends with multiple elements for interactive UI. Using the language model API, I can perform tasks like summarizing, translating, or answering user input from the front end. However, I’ll need to work on effective prompt engineering for the best results.
+
+## References for more info
+- https://console.groq.com/docs/quickstart
+- https://www.restack.io/docs/streamlit-knowledge-streamlit-flask-api-integration
