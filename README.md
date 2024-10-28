@@ -56,6 +56,7 @@ In a new terminal:
 streamlit run frontend.py
 ```
 The Streamlit interface will be available at http://localhost:8501
+**Note**: Before running, check whether another app is not running on the ports 5000 and 8501
 
 ## Usage
 
