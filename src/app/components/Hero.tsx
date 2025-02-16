@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilePdf, faDatabase, faFileArchive } from "@fortawesome/free-solid-svg-icons";
 
