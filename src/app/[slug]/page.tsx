@@ -56,12 +56,9 @@ type ProjectsMap = {
 const ProjectPage = () => {
   const {slug} = useParams(); // Fetch the dynamic route parameter
 
-  console.log('----------------')
-  console.log(slug);
   const projectSlug = slug as string;
   // Get project-specific data based on the route
   const projectData:Project = projects[projectSlug];
-  console.log(projectData);
 
   if (!projectData) {
     return <div>Project not found</div>; // Handle invalid routes

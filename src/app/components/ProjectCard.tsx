@@ -1,4 +1,3 @@
-import { Circle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -20,7 +19,7 @@ interface ProjectCardProps {
   nextPageLink?: string;
 }
 
-export function ProjectCard({ title, authors, venue, abstract, paperLink, githubLink, nextPageLink }: ProjectCardProps) {
+export function ProjectCard({ title, authors, abstract, githubLink, nextPageLink }: ProjectCardProps) {
   const router = useRouter();
   const truncatedAbstract = abstract &&
     abstract.length > 150 ? `${abstract.slice(0, 150)}...` : abstract;

@@ -1,7 +1,8 @@
 "use client";
 import { ProjectCard } from "@/app/components/ProjectCard";
+import { Link } from "lucide-react";
 
-export const projectData = [
+const projectData = [
   {
     year: 2025,
     projects: [
@@ -71,31 +72,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header Navigation */}
-      <header className="w-full  p-4 shadow-md">
-        <nav className="container mx-auto flex justify-between items-center">
-          <h1 className="text-xl font-bold text-gray-800 dark:text-gray-200">
-            Civic A. I. Lab Projects
-          </h1>
-          <ul className="flex space-x-6 text-gray-600 dark:text-gray-300">
-            <li>
-              <a
-                href="#"
-                className="hover:text-gray-800 dark:hover:text-white transition-colors"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="/about"
-                className="hover:text-gray-800 dark:hover:text-white transition-colors"
-              >
-                About
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+
 
       {/* Main Section */}
       <main className="container mx-auto p-8">
