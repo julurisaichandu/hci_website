@@ -19,3 +19,12 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* globals.css */
+body {
+  /* font-family: "Google Sans", "Noto Sans", sans-serif; */
+  /* font-family: "Monomakh", serif;
+  font-weight: 400;
+  font-style: normal; */
+}
