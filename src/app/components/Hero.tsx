@@ -1,37 +1,28 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilePdf, faDatabase, faFileArchive } from "@fortawesome/free-solid-svg-icons";
 
-const Hero = () => {
-  const authors = [
-    { name: "Faria Huq", link: "https://oaishi.github.io/" },
-    { name: "Zora Zhiruo Wang", link: "https://zorazrw.github.io/" },
-    { name: "Frank F. Xu", link: "https://frankxfz.me/" },
-    { name: "Tianyue Ou", link: "#" }, // Replace "#" with the actual link if available
-    { name: "Shuyan Zhou", link: "https://shuyanzhou.github.io/" },
-    { name: "Jeffrey P. Bigham", link: "https://www.cs.cmu.edu/~jbigham/" },
-    { name: "Graham Neubig", link: "https://www.phontron.com/" },
-  ];
+interface HeroProps {
+  title: string;
+  authors: { name: string; link: string; university: string }[];
+}
+
+const Hero = ({ title, authors }: HeroProps) => {
+
+
   return (
     <section className="bg-white py-12">
       <div className="container mx-auto max-w-4xl text-center">
         {/* Title */}
         <h1 className="text-4xl font-bold flex items-center justify-center">
-          {/* Logo */}
-          {/* <Image
-            src="/static/images/cowpilot.png"
-            alt="CowPilot Logo"
-            width={40}
-            height={40}
-            className="mr-2"
-          /> */}
-          CowPilot: A Framework for Autonomous and Human-Agent Collaborative Web Navigation
+          {title}
         </h1>
 
         {/* Authors */}
         <div className="mt-4 text-lg">
-        <p>
+          <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
             {authors.map((author, index) => (
-              <span key={index}>
+              <div key={index} className="mb-2">
+                {/* Author Name */}
                 <a
                   href={author.link}
                   target="_blank"
@@ -40,16 +31,16 @@ const Hero = () => {
                 >
                   {author.name}
                 </a>
-                {index < authors.length - 1 && ", "}
-              </span>
+                {/* Author's University */}
+                <p className="text-gray-600 text-sm">{author.university}</p>
+              </div>
             ))}
-          </p>
-          <p className="mt-2">Carnegie Mellon University | Under Review in NAACL 2025 Demo Track</p>
-          <small><sup>*</sup> Indicates Equal Supervision</small>
+          </div>
+          <p className="mt-4 text-gray-700">Under Review in NAACL 2025 Demo Track</p>
         </div>
 
-{/* Links */}
-<div className="mt-6 flex justify-center space-x-4">
+        {/* Links */}
+        <div className="mt-6 flex justify-center space-x-4">
           {/* ArXiv Link */}
           <a
             href="https://arxiv.org/abs/2501.16609"
@@ -87,7 +78,5 @@ const Hero = () => {
     </section>
   );
 };
-
-
 
 export default Hero;

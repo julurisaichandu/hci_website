@@ -1,101 +1,130 @@
-import Image from "next/image";
+"use client";
+import { ProjectCard } from "@/app/components/ProjectCard";
+
+export const projectData = [
+  {
+    year: 2025,
+    projects: [
+      {
+        title: "GigSense: An LLM-Infused Tool for Workers’ Collective Intelligence",
+        authors: [
+
+          "Kashif Imteyaz",
+          "Claudia Flores-Saviaga",
+          "Saiph Savage"
+        ],
+        venue: "CHI 2025: ACM Conference on Human Factors in Computing Systems",
+        abstract: "GigSense first features an intelligent agent that automatically organizes and summarizes workers’ problems. Within short timeframes, workers can zoom in and out to analyze and understand their collective issues. The tool also offers a collaborative space for brainstorming and selecting optimal solutions to address their problems. Moreover, GigSense’s intelligent agent provides AI-enhanced solutions to further support workers’ brainstorming and planning endeavors.",
+        paperLink: "#",
+        githubLink: "https://github.com/NortheasternAI/Quantifying-Invisible-Labor",
+        nextPageLink: "/gigsense"
+      },
+      {
+        title: "A Culturally-Aware AI Tool for Crowdworkers",
+        authors: [
+          "Carlos Toxtli",
+          "Christopher Curtis",
+          "Saiph Savage"
+        ],
+        venue: "CSCW 2024: ACM Conference on Computer-Supported Cooperative Work",
+        abstract: "This paper presents the design and evaluation of a culturally-aware AI tool for crowdworkers. We conducted a qualitative study with 20 crowdworkers from diverse cultural backgrounds to understand their preferences and needs when working with AI tools. Based on our findings, we designed an AI tool that adapts to the cultural preferences of crowdworkers. Our evaluation shows that crowdworkers found the culturally-aware AI tool to be more engaging and useful than a standard AI tool. Our work contributes to the growing body of research on culturally-aware AI and has implications for the design of AI tools for crowdworkers.",
+        paperLink: "#",
+        githubLink: "https://github.com/example/repo2",
+        nextPageLink: "/projects/culturally-aware-ai-tool"
+      }
+    ]
+  },
+  {
+    year: 2024,
+    projects: [
+      {
+        title: "Unveiling AI-Driven Collective Action for a Worker-Centric Future",
+        authors: [
+          "Saiph Savage"
+        ],
+        venue: "WSDM: ACM International Conference on Web Search and Data Mining 2024",
+        abstract: "This paper presents a vision for AI-driven collective action in the future of work. I argue that AI has the potential to empower workers to organize and advocate for their rights in the digital economy. I propose a research agenda for studying AI-driven collective action and discuss the implications of this work for the design of AI systems that support worker-centric futures.",
+        paperLink: "#",
+        githubLink: "https://github.com/example/repo3",
+        nextPageLink: "/projects/ai-driven-collective-action"
+      },
+      {
+        title: "AI and National Security",
+        authors: [
+          "Saiph Savage",
+          "Gabriela Avila",
+          "Norma Elva Chávez",
+          "Martha Garcia-Murillo"
+        ],
+        venue: "Book Chapter in the Handbook of Artificial Intelligence at Work, Edward Elgar Publisher 2024",
+        abstract: "This book chapter provides an overview of the role of AI in national security. We discuss the opportunities and challenges of using AI for national security purposes, including intelligence analysis, cyber defense, and autonomous weapons systems. We also examine the ethical and legal implications of AI in national security and propose a research agenda for studying the impact of AI on national security.",
+        paperLink: "#",
+        githubLink: "https://github.com/example/repo4",
+        nextPageLink: "/projects/ai-and-national-security"
+      }
+    ]
+  }
+];
+
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen flex flex-col">
+      {/* Header Navigation */}
+      <header className="w-full  p-4 shadow-md">
+        <nav className="container mx-auto flex justify-between items-center">
+          <h1 className="text-xl font-bold text-gray-800 dark:text-gray-200">
+            Civic A. I. Lab Projects
+          </h1>
+          <ul className="flex space-x-6 text-gray-600 dark:text-gray-300">
+            <li>
+              <a
+                href="#"
+                className="hover:text-gray-800 dark:hover:text-white transition-colors"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="/about"
+                className="hover:text-gray-800 dark:hover:text-white transition-colors"
+              >
+                About
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+      {/* Main Section */}
+      <main className="container mx-auto p-8">
+        {projectData.map((section) => (
+          <div key={section.year} className="mb-12">
+            {/* Year Heading */}
+            <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200">
+              {section.year}
+            </h2>
+
+            {/* Projects Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              {section.projects.map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  title={project.title}
+                  authors={project.authors}
+                  venue={project.venue}
+                  abstract={project.abstract}
+                  paperLink={project.paperLink}
+                  githubLink={project.githubLink}
+                  nextPageLink={project.nextPageLink}
+
+                />
+              ))}
+            </div>
+          </div>
+        ))}
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
