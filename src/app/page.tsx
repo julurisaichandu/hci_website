@@ -1,7 +1,5 @@
 "use client";
 import { ProjectCard } from "@/app/components/ProjectCard";
-import { Link } from "lucide-react";
-
 const projectData = [
   {
     year: 2025,
